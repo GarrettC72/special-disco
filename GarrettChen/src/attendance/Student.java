@@ -4,11 +4,12 @@ public class Student implements Attendee {
 	
 	private String firstName;
 	private String lastName;
-	private boolean present = false;
+	private boolean present;
 
 	public Student(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
+		present = false;
 	}
 
 	public boolean isPresent() {
@@ -28,11 +29,11 @@ public class Student implements Attendee {
 	}
 	
 	public boolean mathces(String first, String last) {
-		return firstName.equals(first) && lastName.equals(last);
+		return firstName.toLowerCase().equals(first.toLowerCase()) && lastName.toLowerCase().equals(last.toLowerCase());
 	}
 	
 	public boolean matches(String last) {
-		return lastName.equals(last);
+		return lastName.toLowerCase().equals(last.toLowerCase());
 	}
 	
 	public String getReportString() {
