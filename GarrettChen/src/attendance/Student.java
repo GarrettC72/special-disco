@@ -27,7 +27,7 @@ public class Student implements Attendee {
 		return lastName;
 	}
 	
-	public boolean matches(String first, String last) {
+	public boolean mathces(String first, String last) {
 		return firstName.equals(first) && lastName.equals(last);
 	}
 	
@@ -58,6 +58,7 @@ public class Student implements Attendee {
 		else {
 			shortS1 += "ABSENT";
 		}
+		shortS1 += "\n";
 		return shortS1;
 	}
 }
