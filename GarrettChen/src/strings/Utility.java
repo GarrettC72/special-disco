@@ -68,6 +68,10 @@ public class Utility{
 	public static boolean noNegations(String s, int psn){
 		if (psn == 0) {
 			return true;
+		}else if (s.indexOf(psn - 4) == -1){
+			if (s.indexOf(psn - 3) == -1) {
+				return true;
+			}
 		}
 		else if (s.substring(psn - 4, psn - 1).equals("not") || (s.substring(psn - 3, psn - 1).equals("no"))) {
 			return false;
