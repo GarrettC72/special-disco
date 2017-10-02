@@ -47,6 +47,9 @@ public class Utility{
 
 	public static boolean keywordIsIsolated(int psn, String keyword, String s){
 		//find last word
+		if (!(keyword.charAt(0) == (s.charAt(psn)))) {
+			return false;
+		}
 		if (s.indexOf(psn + keyword.length()) == -1) {
 			return true;
 		} 
@@ -56,10 +59,19 @@ public class Utility{
 		else if (s.substring(psn + keyword.length(), psn + keyword.length() + 1).equals(" ")) {
 			return true;
 		}
+		else if (s.substring(psn + keyword.length(), psn + keyword.length() + 1).compareTo("a") > 0) {
+			return false;
+		}
 		return false;
 	}
 
 	public static boolean noNegations(String s, int psn){
+		if (psn == 0) {
+			return true;
+		}
+		else if (s.substring(psn - 4, psn - 1).equals("not") || (s.substring(psn - 3, psn - 1).equals("no"))) {
+			return false;
+		}
 		return true;
 	}
 
