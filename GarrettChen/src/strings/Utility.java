@@ -47,20 +47,17 @@ public class Utility{
 
 	public static boolean keywordIsIsolated(int psn, String keyword, String s){
 		//find last word
-		if (!(keyword.equals(s.substring(psn, psn + keyword.length())))) {
+		if (!keyword.equals(s.substring(psn, psn + keyword.length()))) {
 			return false;
 		}
-		if (s.indexOf(psn + keyword.length()) == -1) {
+		if (s.substring(s.length() - keyword.length(), s.length()).equals(s.substring(psn, psn + keyword.length()))) {
 			return true;
-		} 
+		}
 		else if (s.substring(psn + keyword.length(), psn + keyword.length() + 1).compareTo("a") < 0) {
 			return true;
 		}
 		else if (s.substring(psn + keyword.length(), psn + keyword.length() + 1).equals(" ")) {
 			return true;
-		}
-		else if (s.substring(psn + keyword.length(), psn + keyword.length() + 1).compareTo("a") > 0) {
-			return false;
 		}
 		return false;
 	}
@@ -68,12 +65,17 @@ public class Utility{
 	public static boolean noNegations(String s, int psn){
 		if (psn == 0) {
 			return true;
-		}else if (s.indexOf(psn - 4) == -1){
-			if (s.indexOf(psn - 3) == -1) {
-				return true;
-			}
 		}
-		else if (s.substring(psn - 4, psn - 1).equals("not") || (s.substring(psn - 3, psn - 1).equals("no"))) {
+		if (psn < 3) {
+			return true;
+		}
+		else if (psn < 4) {
+			if (s.indexOf("no") == 0) {
+				return false;
+			}
+			return true;
+		}
+		if (s.substring(psn - 4, psn - 1).equals("not") && psn > 3 || (s.substring(psn - 3, psn - 1).equals("no"))) {
 			return false;
 		}
 		return true;
