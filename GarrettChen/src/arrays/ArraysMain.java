@@ -8,13 +8,23 @@ public class ArraysMain {
 	private int[] intRay;
 	
 	public ArraysMain() {
-		intRay = new int[100];
+		//intRay = new int[100];
 		//populate(intRay);
 		//checkOccurences(intRay,3,18);
-		populate1ToN(intRay);
-		shuffle(intRay);
+		//populate1ToN(intRay);
+		//frontToBack(intRay);
+		//int[] consecTest1 = {1,2,3,6,7,8,9,10,11,45,46,47};
+		//int[] consecTest2 = {10,11,12,13,14,15,6,7,8,9,10,11,45,46,47};
+		int[] randomRolls = new int[1000];
+		populate(randomRolls);
+		
+		//System.out.println("The longest sequence in the first test is " + longestConsecutiveSequence(consecTest1));
+		//System.out.println("The longest sequence in the second test is " + longestConsecutiveSequence(consecTest2));
 		//Arrays is a Utility class included in Java for formatting output
-		System.out.println(Arrays.toString(intRay));
+		//System.out.println(Arrays.toString(intRay));
+		int[] result = longestConsecSeqAndPos(randomRolls);
+		System.out.println("The longest sequence of dice rolls is " + result[0] + 
+				" it happened on the " + (result[1] + 1) + "th roll. Starting with a roll of " + randomRolls[result[1]] + ".");
 	}
 	
 	private void shuffle(int[] intRay) {
@@ -54,6 +64,90 @@ public class ArraysMain {
 		/*for(int value: intRay) {
 			value = diceRoll(2);
 		}*/
+	}
+	
+	public int[] reverseOrder(int[] intRay) {
+		int[] testArray = new int[intRay.length];
+		for(int i = 0; i < intRay.length; i++) {
+			testArray[i] = intRay[intRay.length - 1 - i];
+		}
+		return testArray;
+	}
+	/**
+	 * returns the length of the longest sequence of consecutive integers in intRay
+	 * For example lCS({1,2,3,7,8,9,10}) returns 4 because 7,8,9,10 is 4 integers long
+	 * @param arr
+	 * @return
+	 */
+	public int longestConsecutiveSequence(int[] intRay) {
+		int seq = 1;
+		int longseq = 0;
+		for (int i = 0; i < intRay.length - 1; i++) {
+			if(nextElementIsInSequence(intRay, i)) {
+				seq++;
+			}else {
+				if(longseq < seq) {
+					longseq = seq;
+				}
+				seq = 1;
+			}
+		}
+		return longseq;
+	}
+	
+	public int[] longestConsecSeqAndPos(int[] intRay) {
+		int[] data = new int[2];
+		data[0] = longestConsecutiveSequence(intRay);
+		
+		return data;
+	}
+	
+	public boolean nextElementIsInSequence(int[] intRay, int pos) {
+		return intRay[pos] + 1 == intRay[pos + 1];
+	}
+	
+	public int consecutiveLength(int[] intRay, int pos) {
+		int seq = 1;
+		for(int i = pos; i < intRay.length - 1; i++) {
+			if(nextElementIsInSequence(intRay, i)) {
+				seq++;
+			}
+			else {
+				return seq;
+			}
+		}
+		return seq;
+	}
+	/*
+	 * remove the element at index zero, push every other element up by one. 1 to 0, 2 to 1, etc.
+	 * Put the element that was at zero at the end of intRay
+	 */
+	public void frontToBack(int[] intRay) {
+		int front = intRay[0];
+		for(int i = 0; i < intRay.length - 1; i++) {
+			intRay[i] = intRay[i + 1];
+		}
+		intRay[intRay.length - 1] = front;
+	}
+	/**
+	 * moves the front to the back repeatedly, exactly n times
+	 * @param intRay
+	 * @param n
+	 */
+	public void cycleThrough(int[] intRay, int n) {
+		for(int i = 0; i < n; i++) {
+			frontToBack(intRay);
+		}
+	}
+	
+	public int countLessThan(int[] intRay, int n) {
+		int count = 0;
+		for(int value: intRay) {
+			if(value < n) {
+				count++;
+			}
+		}
+		return count;
 	}
 
 	public void notes() {
