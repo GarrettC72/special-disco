@@ -1,13 +1,16 @@
 package arrays;
 
+import java.util.Arrays;
+
 public class ObjectArrays {
 
 	public ObjectArrays() {
-		Object[] people = new Object[20];
+		Person[] people = new Person[12];
 		populate(people);
-		people[0] = new Thing("coffee maker");
-		for(Object p: people) {
-			System.out.println(p);
+		for(Person p: people) {
+			p.mingle(people);
+			p.printFriends();
+			System.out.println(" ");
 		}
 	}
 
@@ -41,6 +44,59 @@ public class ObjectArrays {
 
 	private String get(String[] a) {
 		return a[(int)(Math.random()*a.length)];
+	}
+	
+	public Person[] selectGroup(Person[] population, int length) {
+		Person[] group = new Person[length];
+		group[0] = selectAPerson(population);
+		for(int i = 1; i < length; i++) {
+			Person nextPerson = selectAPerson(population);
+			while(personInGroup(group, nextPerson)) {
+				nextPerson = selectAPerson(population);
+			}
+			group[i] = nextPerson;
+		}
+		return group;
+	}
+	
+	/**
+	 * return the number of differences between the two arrays
+	 * A "difference" means that they don't have the same element
+	 * @param arr1
+	 * @param arr2
+	 * @return
+	 */
+	public double countDifferences(Person[] arr1, Person[] arr2) {
+		double differences = 0;
+			for(int i = 0; i < arr1.length; i++) {
+				if(arr1[1] == arr2[1]) {
+					differences++;
+				}
+		}
+		return differences;
+	}
+	
+	/**
+	 * calls count differences on two Person arrays,
+	 * each array must contain the same elements, but randomly ordered
+	 * Print the number of differences between the two arrays
+	 * Do this 100 times, print the average (hint: average needs to be a double)
+	 */
+	public void testShuffling() {
+		
+	}
+
+	private static boolean personInGroup(Person[] group, Person nextPerson) {
+		for(int i = 0; i < group.length; i++) {
+			if(group[i] == nextPerson) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private Person selectAPerson(Person[] population) {
+		return population[(int)(Math.random()*population.length)];
 	}
 	
 	
