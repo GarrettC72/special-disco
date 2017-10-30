@@ -18,7 +18,7 @@ public class CaveRoom {
 
 	public CaveRoom(String description) {
 		this.description = description;
-		setDefaultContents("");
+		setDefaultContents(" ");
 		contents = defaultContents;
 		//difference between defaultContents and contents is "contents" becomes an 'X' when you are
 		//inside this room, when you leave, it goes back to defaultContents
@@ -178,6 +178,11 @@ public class CaveRoom {
 
 	public void setDefaultContents(String defaultContents) {
 		this.defaultContents = defaultContents;
+	}
+
+
+	public Door getDoor(int direction) {
+		return doors[direction];
 	}
 	
 	
