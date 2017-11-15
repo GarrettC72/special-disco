@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\GarrettC\git\SpaceScape"/>
+		<item value="C:\Users\GarrettC\eclipse-workspace\GarrettChen"/>
+		<item value="C:\Users\GarrettC\git\Robot"/>
+		<item value="C:\Users\GarrettC\git\classwork4"/>
+		<item value="C:\Users\GarrettC\git\GarrettDuel"/>
+		<item value="C:\Users\GarrettC\git\special-disco"/>
+	</list>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="202" key="DIALOG_X_ORIGIN"/>
+		<item value="197" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>
