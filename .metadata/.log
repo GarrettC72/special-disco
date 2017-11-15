@@ -608,3 +608,80 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 4 0 2017-11-15 17:42:20.280
+!MESSAGE The process cannot access the file because another process has locked a portion of the file
+!STACK 0
+java.io.IOException: The process cannot access the file because another process has locked a portion of the file
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(Unknown Source)
+	at org.eclipse.jgit.util.IO.readFully(IO.java:303)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:139)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:120)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:234)
+	at org.eclipse.egit.ui.internal.staging.StagingView$48.run(StagingView.java:3139)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.egit.ui 4 0 2017-11-15 17:42:31.928
+!MESSAGE Cannot lock C:\Users\GarrettC\eclipse-workspace\GarrettChen\.git\index. Ensure that no other process has an open file handle on the lock file C:\Users\GarrettC\eclipse-workspace\GarrettChen\.git\index.lock, then you may delete the lock file and retry.
+!STACK 0
+org.eclipse.jgit.errors.LockFailedException: Cannot lock C:\Users\GarrettC\eclipse-workspace\GarrettChen\.git\index. Ensure that no other process has an open file handle on the lock file C:\Users\GarrettC\eclipse-workspace\GarrettChen\.git\index.lock, then you may delete the lock file and retry.
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:251)
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:328)
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:294)
+	at org.eclipse.jgit.lib.Repository.lockDirCache(Repository.java:1232)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:149)
+	at org.eclipse.egit.ui.internal.staging.StagingView$48.run(StagingView.java:3139)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.egit.ui 4 0 2017-11-15 17:42:39.788
+!MESSAGE The process cannot access the file because another process has locked a portion of the file
+!STACK 0
+java.io.IOException: The process cannot access the file because another process has locked a portion of the file
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(Unknown Source)
+	at org.eclipse.jgit.util.IO.readFully(IO.java:303)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:139)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:120)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:234)
+	at org.eclipse.egit.ui.internal.staging.StagingView$48.run(StagingView.java:3139)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.egit.ui 4 0 2017-11-15 17:45:24.250
+!MESSAGE The process cannot access the file because another process has locked a portion of the file
+!STACK 0
+java.io.IOException: The process cannot access the file because another process has locked a portion of the file
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(Unknown Source)
+	at org.eclipse.jgit.util.IO.readFully(IO.java:303)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:139)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:120)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:234)
+	at org.eclipse.egit.ui.internal.staging.StagingView$48.run(StagingView.java:3139)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.egit.ui 4 0 2017-11-15 17:45:27.212
+!MESSAGE The process cannot access the file because another process has locked a portion of the file
+!STACK 0
+java.io.IOException: The process cannot access the file because another process has locked a portion of the file
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(Unknown Source)
+	at org.eclipse.jgit.util.IO.readFully(IO.java:303)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:139)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:120)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:234)
+	at org.eclipse.egit.ui.internal.staging.StagingView$48.run(StagingView.java:3139)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.egit.ui 4 0 2017-11-15 17:45:29.220
+!MESSAGE The process cannot access the file because another process has locked a portion of the file
+!STACK 0
+java.io.IOException: The process cannot access the file because another process has locked a portion of the file
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(Unknown Source)
+	at org.eclipse.jgit.util.IO.readFully(IO.java:303)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:139)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:120)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:234)
+	at org.eclipse.egit.ui.internal.staging.StagingView$48.run(StagingView.java:3139)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
