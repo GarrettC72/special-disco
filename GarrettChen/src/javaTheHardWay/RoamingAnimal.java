@@ -2,7 +2,7 @@ package javaTheHardWay;
 
 public class RoamingAnimal extends Animal {
 	
-	private Habitat habitat;
+	protected Habitat habitat;
 	private boolean sex;
 
 	public RoamingAnimal(Habitat matingArea) {
