@@ -4,12 +4,12 @@ public class Predator extends ReproductionAnimal {
 	
 	public Predator(Habitat matingArea) {
 		super(matingArea);
-		setMaxLitter(3);
+		setMaxLitterSize(3);
 	}
 
 	public Predator(Habitat matingArea, String description, Trait trait1, Trait trait2) {
 		super(matingArea, description, trait1, trait2);
-		setMaxLitter(3);
+		setMaxLitterSize(3);
 	}
 	
 	public static final String[] PREDATORS = {"wolf", "bear", "lion", "bobcat"};
