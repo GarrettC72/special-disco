@@ -80,14 +80,17 @@ public class Searching {
 
 	public static int binarySearch(int[] searchThis, int startIndex, int endIndex, int target) {
 		int halfway = (int)((startIndex + endIndex)/2);
-		if(searchThis[halfway] == target){
+		if(startIndex > endIndex) {
+			return -1;
+		}
+		else if(searchThis[halfway] == target){
 			return halfway;
 		}
 		else if(searchThis[halfway] < target) {
-			return binarySearch(searchThis, halfway, endIndex, target);
+			return binarySearch(searchThis, halfway + 1, endIndex, target);
 		}
 		else if (searchThis[halfway] > target) {
-			return binarySearch(searchThis, startIndex, halfway, target);
+			return binarySearch(searchThis, startIndex, halfway - 1, target);
 		}
 		return -1;
 	}
