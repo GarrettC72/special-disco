@@ -25,7 +25,21 @@ public class MainBattle {
 		squirtle.lapse();
 		bulbasaur.lapse();
 		printScore(squirtle, bulbasaur);
-		squirtle.levelUp(e);
+		System.out.println("Squirtle is attacking again");
+		squirtle.attack(bulbasaur, new Attack() {
+
+			public void attack(Pokemon target) {
+				int hp = target.getHp();
+				target.setHp(hp/2);
+			}
+		});
+		printScore(squirtle, bulbasaur);
+		squirtle.levelUp(new Effect() {
+			@Override
+			public void happens() {
+				//insert code
+			}
+		});
 	}
 
 	public static void printScore(Pokemon p1, Pokemon p2) {
