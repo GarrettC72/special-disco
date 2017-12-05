@@ -1,26 +1,17 @@
 package search;
 
 public class TowerOfHanoi {
-	
-	static int disks = 3;
-	static String diskTower = "";
 
 	public static void main(String[] args) {
-		for(int i = 0; i < disks; i++) {
-			diskTower += i + 1;
-		}
-		towerSolution(3, diskTower, "", "");
+		towerSolution(5, "A", "B", "C");
 	}
 
 	public static void towerSolution(int n, String start, String helper, String end) {
 		if(n == 1) {
-			start = "";
-			end += n;
+			System.out.println(start + " to " + end);
 		}else {
 			towerSolution(n - 1, start, end, helper);
-			String a = start.substring(start.length() - 1);
-			start = start.substring(0, start.length() - 1);
-			end += a;
+			System.out.println(start + " to " + end);
 			towerSolution(n - 1, helper, start, end);
 		}
 	}
